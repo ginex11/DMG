@@ -34,7 +34,6 @@ public class Person {
     }
 
     public Person(String name, String vorname, Date geburtsdatum, int PLZ, String ort, String strasse, int hausnummer) {
-
         Name = name;
         Vorname = vorname;
         Geburtsdatum = geburtsdatum;

@@ -23,7 +23,7 @@ public class Fahrschüler extends Person {
     @JoinTable(name = "TheorieStunden",
             joinColumns = {@JoinColumn(name = "FahrschülerID")},
             inverseJoinColumns = {@JoinColumn(name = "FahrlehrerID")})
-    List<Fahrlehrer> fahrlehrers = new LinkedList<>();
+    private List<Fahrlehrer> fahrlehrers = new LinkedList<>();
 
     public Fahrschüler(String name, String vorname, Date geburtsdatum, int PLZ, String ort, String strasse, int hausnummer) {
         super(name, vorname, geburtsdatum, PLZ, ort, strasse, hausnummer);
@@ -38,7 +38,4 @@ public class Fahrschüler extends Person {
         this.versuche = versuche;
     }
 
-    public void addFahrlehrer(Fahrlehrer fahrlehrer) {
-        fahrlehrers.add(fahrlehrer);
-    }
 }

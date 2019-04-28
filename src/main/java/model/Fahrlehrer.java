@@ -14,14 +14,14 @@ public class Fahrlehrer extends Person {
     private int FahrlehrerID;
 
     @ElementCollection
-    List<String> Fahrzeugklassen = new LinkedList<>();
+    List<String> fahrzeugklassen = new LinkedList<>();
 
     @ManyToMany
     @JoinTable(name = "TheorieStunden",
             joinColumns = {@JoinColumn(name = "FahrlehrerID")},
             inverseJoinColumns = {@JoinColumn(name = "FahrschülerID")})
 
-    List<Fahrschüler> fahrschülers = new LinkedList<>();
+    private List<Fahrschüler> fahrschülers = new LinkedList<>();
 
     public Fahrlehrer() {
     }
@@ -30,7 +30,7 @@ public class Fahrlehrer extends Person {
         super(name, vorname, geburtsdatum, PLZ, ort, strasse, hausnummer);
         this.FahrlehrerID = new AtomicInteger().getAndIncrement();
         for (String s : fzk) {
-            Fahrzeugklassen.add(s);
+            fahrzeugklassen.add(s);
         }
     }
 

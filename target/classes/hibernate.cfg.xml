@@ -23,6 +23,8 @@
 
         <mapping class="model.Fahrschüler"></mapping>
         <mapping class="model.Fahrlehrer"></mapping>
+        <mapping class="model.Fahrzeug"></mapping>
+
 
     </session-factory>
 </hibernate-configuration>

@@ -9,7 +9,7 @@ import java.util.List;
 public class F_fahrzeuge implements DAO<Fahrzeug> {
     @Override
     public void save(Fahrzeug fahrzeug) throws SQLException {
-        
+
     }
 
     @Override

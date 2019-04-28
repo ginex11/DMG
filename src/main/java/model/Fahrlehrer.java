@@ -16,7 +16,7 @@ public class Fahrlehrer extends Person {
     @ElementCollection
     List<String> fahrzeugklassen = new LinkedList<>();
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "TheorieStunden",
             joinColumns = {@JoinColumn(name = "FahrlehrerID")},
             inverseJoinColumns = {@JoinColumn(name = "FahrschülerID")})

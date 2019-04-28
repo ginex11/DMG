@@ -1,15 +1,20 @@
+import DAO_Controller.F_lehrer;
 import DAO_Controller.F_schüler;
+import com.sun.net.httpserver.HttpServer;
 import model.Fahrlehrer;
 import model.Fahrschüler;
 import model.Fahrzeug;
+import org.glassfish.jersey.jdkhttp.JdkHttpServerFactory;
+import org.glassfish.jersey.server.ResourceConfig;
 
 
+import java.net.URI;
 import java.util.Date;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        /*ResourceConfig rc = new ResourceConfig().packages("resources", "filter");
+       /* ResourceConfig rc = new ResourceConfig().packages("resources", "filter");
         HttpServer server = JdkHttpServerFactory.createHttpServer(URI.create("http://localhost:8080/"), rc);
 
         System.out.println("Hit enter to stop HTTP server.");
@@ -34,8 +39,13 @@ public class Main {
         fahrlehrer2.addFahrschüler(fahrschüler);
 
         Fahrzeug auto = new Fahrzeug("VW", "B1", "Automatik", "12.12.2000", "RZ66KM");
+
         F_schüler fschüler = new F_schüler();
+        F_lehrer f_lehrer = new F_lehrer();
+
         fschüler.save(fahrschüler);
+        f_lehrer.save(fahrlehrer1);
+        f_lehrer.save(fahrlehrer2);
     }
 
 }

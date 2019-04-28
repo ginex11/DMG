@@ -19,8 +19,8 @@ public class Fahrschüler extends Person {
     @Column(name = "PRÜFUNGVERSUCHE")
     private int versuche;
 
-    @ManyToMany
-    @JoinTable(name = "TheorieStunden",
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "THEORIESTUNDEN",
             joinColumns = {@JoinColumn(name = "FahrschülerID")},
             inverseJoinColumns = {@JoinColumn(name = "FahrlehrerID")})
     private List<Fahrlehrer> fahrlehrers = new LinkedList<>();
